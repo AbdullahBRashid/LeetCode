@@ -7,7 +7,7 @@ public:
         int cur_diff = 0;
         for (int i = 0; i < points.size() - 1; i++) {
             cur_diff = points[i+1][0] - points[i][0];
-            if (cur_diff > max_diff) max_diff = cur_diff;
+            max_diff = max(max_diff, cur_diff);
         }
 
         return max_diff;
