@@ -7,8 +7,6 @@ public:
         for (int i = 0; i < nums.size(); i++) {
             cur_pos += nums[i];
 
-            if (nums[i] == 0) continue;
-
             if (cur_pos == 0) count++;
         }
 
