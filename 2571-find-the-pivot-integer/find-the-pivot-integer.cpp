@@ -9,9 +9,7 @@ public:
         for (int i = 0; i <= n; i++) {
             rhs += i;
         }
-
-        cout << rhs << endl;
-
+        
         for (int i = 1; i <= n; i++) {
             lhs += i;
             rhs -= i-1;
