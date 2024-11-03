@@ -28,19 +28,26 @@ public:
         tmp1 = tmp1->next;
         tmp2 = tmp2->next;
 
+        int data = 0;
+
         while (tmp1 || tmp2 || carry) {
 
             data1 = 0;
             data2 = 0;
             
-            if (tmp1) data1 = tmp1->val;
-            if (tmp2) data2 = tmp2->val;
+            if (tmp1) {
+                data1 = tmp1->val;
+                tmp1 = tmp1->next;
+            }
+            if (tmp2) {
+                data2 = tmp2->val;
+                tmp2 = tmp2->next;
+            }
 
-            parent->next = new ListNode( (data1 + data2 + carry) % 10);
-            carry = (data1 + data2 + carry) / 10;
+            data = data1 + data2 + carry;
 
-            if (tmp1) tmp1 = tmp1->next;
-            if (tmp2) tmp2 = tmp2->next;
+            parent->next = new ListNode( data % 10);
+            carry = data / 10;
 
             parent = parent->next;
         }
